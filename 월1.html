@@ -1,0 +1,62 @@
+<html>
+<head>
+ <title>사회복무요원 - 이현지역아동센터</title>
+ <meta charset="utf-8">
+</head>
+
+  <script>
+
+	function buttonCheck(){
+
+		var h = frm.hobby;
+
+/* <form>태그 안에있는 name값안에 접근 (document.frm.hobby인데 document 생략가능)*/
+
+		var str="";								/* check가 되었는지 확인하고 출력 하는 변수*/
+
+		for(i=0; i<h.length; i++)						/* name의 요소의 길이 많큼 반복*/
+
+		{
+
+			if(h[i].checked==true){						/*checkbox가 check가 되어 있으면*/
+
+				str+=h[i].value+" ";
+
+			}
+
+		}
+
+		if(str=="")									/*check가 안되었으면 if문 실행*/
+
+		{
+
+			alert("체온을 측정하세요");
+
+		}else{
+
+			alert(str)
+
+		}
+
+	}
+
+  </script>
+
+
+ <body>
+
+	<form name="frm">
+
+		<input type="checkbox" value="수영" name="체온측정">종사자 체온측<br>
+
+		<input type="checkbox" value="독서" name="hobby">독서<br>
+
+		<input type="checkbox" value="영화" name="hobby">영화<br>
+
+		<input type="checkbox" value="음악" name="hobby">음악<br>
+
+		<input type="button" value="선택" onclick="buttonCheck()">
+
+	</form>
+
+ </body>
